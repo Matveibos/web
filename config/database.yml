@@ -1,0 +1,25 @@
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: postgres
+  password: Mb23532
+  host: localhost
+  port: 5432
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: zad44_development
+
+
+test:
+  <<: *default
+  database: zad44_test
+
+
+production:
+  <<: *default
+  database: zad44_production
+  username: zad44
+  password: <%= ENV['ZAD44_DATABASE_PASSWORD'] %>
