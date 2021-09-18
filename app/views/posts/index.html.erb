@@ -1,8 +1,8 @@
 <h1>Все наши посты</h1>
 <%@post.each do |f| %>
-  <div class = "well">
+  <div class = "alert alert-light">
   <h3><%=f.title %></h3>
   <h3><%=f.body %></h3>
-    <%= link_to "Читать далее",post_path(f),:class =>'btn btn-default' %>
+    <%= link_to "Читать далее",post_path(f),:class =>'btn btn-outline=primary' %>
   </div>
 <% end %>
