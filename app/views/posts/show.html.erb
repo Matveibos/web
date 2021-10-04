@@ -1,9 +1,9 @@
 <h1><%=@post.title %></h1>
-<p><%=@post.body %></p>
+<p><%=markdown(@post.body) %></p>
 <hr>
 <%=link_to "Редактировать",edit_post_path(@post),:class =>'btn btn-warning' %>
-<%=link_to "Удалить пост",post_path(@post),method: :delete,data:{
-  confirm:"Хотите удалить статью ?"}, :class=>'btn btn-danger' %>
+<%=link_to "Удалить задачу",post_path(@post),method: :delete,data:{
+  confirm:"Хотите удалить задачу ?"}, :class=>'btn btn-danger' %>
 <hr>
 
 <h1>Все комментарии</h1>
@@ -13,14 +13,14 @@
   </div>
 <% end %>
 
-
-
 <hr>
-<h2> Добавления Кооментария</h2>
+<h2> Добавления Коментария</h2>
 <%= form_for([@post, @post.comments.build]) do|f|%>
+
   <p>Пользователь<br>
     <%= f.text_field(:username, {:class =>'form-control'}) %>
-  </p><p>
+  </p>
+  <p>
   Текст комментария<br>
   <%= f.text_area(:body, {:class =>'form-control'} )%>
 </p>
