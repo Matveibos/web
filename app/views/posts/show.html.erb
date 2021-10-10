@@ -1,5 +1,4 @@
 <h1><%=@post.title %></h1>
-<p><%=markdown(@post.body) %></p>
 <hr>
 <%=link_to "Редактировать",edit_post_path(@post),:class =>'btn btn-warning' %>
 <%=link_to "Удалить задачу",post_path(@post),method: :delete,data:{
