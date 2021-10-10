@@ -1,4 +1,4 @@
 class Authorization < ApplicationRecord
   # принадлежность
-  belonds_to :user
+  belongs_to :user
 end
