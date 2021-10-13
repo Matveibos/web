@@ -53,15 +53,6 @@ ActiveRecord::Schema.define(version: 2021_09_27_142913) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "authorisations", force: :cascade do |t|
-    t.bigint "[:user, {:foreign_key=>true}]_id"
-    t.string "provider"
-    t.string "uid"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["[:user, {:foreign_key=>true}]_id"], name: "index_authorisations_on_[:user, {:foreign_key=>true}]_id"
-  end
-
   create_table "authorizations", force: :cascade do |t|
     t.bigint "user_id"
     t.string "provider"

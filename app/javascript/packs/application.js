@@ -11,4 +11,6 @@ import "channels"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
-//= require markitup
+
+require("trix")
+require("@rails/actiontext")
