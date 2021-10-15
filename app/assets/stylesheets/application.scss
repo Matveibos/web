@@ -2,3 +2,7 @@
 //@import "markitup";
 //@import "markitup-markdown";
 @import "./actiontext.scss";
+
+trix-editor.form-control {
+  height: auto;
+}
