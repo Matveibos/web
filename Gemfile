@@ -65,23 +65,23 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 
 
-source "https://rubygems.org" do
-  gem "faraday",             "~> 1.8.0", :require => false
-  gem "faraday_middleware",  "~> 1.0.0.rc1", :require => false
-  gem "net-http-persistent", "~> 4.0", :require => false
-  gem "nokogiri",            "~> 1.12.5", :require => false
-
-  gem "jwt",                 "~>1.5", :require => false
-  gem "adal",                "~> 1.0", :require => false
-  gem "dotenv",              "~> 2.0", :require => false
-  gem "minitest",            "~> 5", :require => false
-  gem "minitest-reporters",  "~> 1", :require => false
-  gem "mocha",               "~> 1.0", :require => false
-  gem "rake",                "~> 13.0", :require => false
-  gem "timecop",             "~> 0.7", :require => false
-  gem "yard",                "~> 0.9", ">= 0.9.11", :require => false
-  gem "coveralls",           require: false
-end
+# source "https://rubygems.org" do
+#   gem "faraday",             "~> 1.8.0", :require => false
+#   gem "faraday_middleware",  "~> 1.0.0.rc1", :require => false
+#   gem "net-http-persistent", "~> 4.0", :require => false
+#   gem "nokogiri",            "~> 1.12.5", :require => false
+#
+#   gem "jwt",                 "~>1.5", :require => false
+#   gem "adal",                "~> 1.0", :require => false
+#   gem "dotenv",              "~> 2.0", :require => false
+#   gem "minitest",            "~> 5", :require => false
+#   gem "minitest-reporters",  "~> 1", :require => false
+#   gem "mocha",               "~> 1.0", :require => false
+#   gem "rake",                "~> 13.0", :require => false
+#   gem "timecop",             "~> 0.7", :require => false
+#   gem "yard",                "~> 0.9", ">= 0.9.11", :require => false
+#   gem "coveralls",           require: false
+# end
 
  # gem "azure-storage-blob", require: false
 gem "mini_magick"
