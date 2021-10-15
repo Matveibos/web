@@ -51,8 +51,8 @@ class PostsController < ApplicationController
 
   end
 
-  private def post_params
-    params.require(:post).permit(:title,:body,:answer_num)
-  end
+  # private def post_params
+  #   params.require(:post).permit(:title,:body,:answer_num)
+  # end
 
 end
