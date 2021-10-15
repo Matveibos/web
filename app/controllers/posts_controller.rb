@@ -43,16 +43,16 @@ class PostsController < ApplicationController
      render 'new'
     end
 
-    private
-    def post_params
-      params.require(:post).permit(:title, :content, images: [])
-    end
+    # private
+    # def post_params
+    #   params.require(:post).permit(:title, :content, images: [])
+    # end
 
 
   end
 
-  # private def post_params
-  #   params.require(:post).permit(:title,:body,:answer_num)
-  # end
+  private def post_params
+    params.require(:post).permit(:title,:body,:answer_num)
+  end
 
 end
