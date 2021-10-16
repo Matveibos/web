@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :titles
   #на форуме советуют изменить devise_for devise_for :user, controller: { registration: "registration", omniauth_callbacks: "omniauth_callbacks" }
-  devise_for :users,controllers: {omniauth_callbacks:'omniauth_callbacks'}
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   #users-таблица, говорим применить настройку контроллера ^
   # devise сгенерирова views в котором есть ссылки(выведутся на экран)
   #

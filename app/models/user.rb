@@ -4,13 +4,27 @@ class User < ApplicationRecord
   #
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
-         :omniauthable, omniauth_providers: [:facebook]
+         :omniauthable, omniauth_providers: [:google_oauth2]
 #  добавил  :omniauthable, omniauth_prividers: [:facebook]
 
   # установим связь
-  has_many :authorizations
+  # has_many :authorizations
 
   # валидация
   # validates :email    ,presence: true
   # validates :password ,presence: true
+
+  def self.from_omniauth(access_token)
+    data = access_token.info
+    user = User.where(email: data['email']).first
+
+    # Uncomment the section below if you want users to be created if they don't exist
+    unless user
+        user = User.create(
+           email: data['email'],
+           password: Devise.friendly_token[0,20]
+        )
+    end
+    user
+  end
 end
