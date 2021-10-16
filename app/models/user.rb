@@ -5,10 +5,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: [:google_oauth2]
-#  добавил  :omniauthable, omniauth_prividers: [:facebook]
+  #  добавил  :omniauthable, omniauth_prividers: [:facebook]
 
   # установим связь
-   has_many :posts
+  has_many :posts
 
   # валидация
   # validates :email    ,presence: true
@@ -20,10 +20,10 @@ class User < ApplicationRecord
 
     # Uncomment the section below if you want users to be created if they don't exist
     unless user
-        user = User.create(
-           email: data['email'],
-           password: Devise.friendly_token[0,20]
-        )
+      user = User.create(
+        email: data['email'],
+        password: Devise.friendly_token[0, 20]
+      )
     end
     user
   end
