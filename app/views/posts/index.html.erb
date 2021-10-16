@@ -3,6 +3,6 @@
   <div class = "alert alert-light">
   <h2><span style="color:blue;font-weight:bold"><%=f.title %></span></h2>
   <h3><%=f.body %></h3>
-    <%= link_to "Подробнее",post_path(f),:class =>'btn btn-info' %>
+    <%= link_to "Подробнее",post_path(f),:class =>'btn btn-info' %> <h3><%=f.user.email %></h3>
   </div>
 <% end %>

@@ -8,7 +8,7 @@ class User < ApplicationRecord
 #  добавил  :omniauthable, omniauth_prividers: [:facebook]
 
   # установим связь
-  # has_many :authorizations
+   has_many :posts
 
   # валидация
   # validates :email    ,presence: true
