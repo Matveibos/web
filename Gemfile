@@ -63,7 +63,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'font-awesome-sass'
 gem 'simple_form'
-
+gem 'omniauth-google-oauth2'
 
 # source "https://rubygems.org" do
 #   gem "faraday",             "~> 1.8.0", :require => false

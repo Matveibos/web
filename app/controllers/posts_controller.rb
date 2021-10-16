@@ -42,12 +42,13 @@ class PostsController < ApplicationController
      else
      render 'new'
     end
-
     # private
     # def post_params
     #   params.require(:post).permit(:title, :content, images: [])
     # end
+  end
 
+  def privacy_policy
 
   end
 
