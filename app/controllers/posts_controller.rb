@@ -17,7 +17,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
-    if @post.user_id == current_user.id
+    if user_signed_in? && @post.user.id == current_user.id
       @post.destroy
       redirect_to posts_path
     else
@@ -27,7 +27,8 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
-    if @post.user_id == current_user.id
+    if user_signed_in? && @post.user.id == current_user.id
+
     else
       redirect_to home_path, notice: 'You are not authorized'
     end
@@ -36,7 +37,7 @@ class PostsController < ApplicationController
   def update
 
     @post = Post.find(params[:id])
-    if @post.user_id == current_user.id
+    if user_signed_in? && @post.user.id == current_user.id
       if @post.update(post_params)
         redirect_to @post
       else
