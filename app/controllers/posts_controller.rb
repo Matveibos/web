@@ -17,12 +17,20 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
-    @post.destroy
-    redirect_to posts_path
+    if @post.user_id == current_user.id
+      @post.destroy
+      redirect_to posts_path
+    else
+      redirect_to home_path, notice: 'You are not authorized'
+    end
   end
 
   def edit
     @post = Post.find(params[:id])
+    if @post.user_id == current_user.id
+    else
+      redirect_to home_path, notice: 'You are not authorized'
+    end
   end
 
   def update
@@ -54,8 +62,19 @@ class PostsController < ApplicationController
   end
 
   def privacy_policy
-
   end
+
+
+  # def like
+  #   if current_user.voted_for? @post
+  #     @post.unliked_by current_user
+  #   else
+  #     @post.liked_by current_user
+  #   end
+  # end
+
+
+
 
   private def post_params
     params.require(:post).permit(:title, :body, :answer_num)

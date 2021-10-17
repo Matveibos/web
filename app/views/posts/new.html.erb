@@ -1,22 +1,22 @@
 <h2>Добавление новой задачи</h2>
-<%= form_for :post, url: posts_path do |f| %>
-  <% if @post.errors.any? %>
-    <% @post.errors.full_messages.each do |msg| %>
-      <div class="alert alert-danger"><%= msg %></div>
-    <% end %>
-  <% end %>
-  <p>Краткое название<br>
-    <%= f.text_field(:title, { :class => 'form-control' }) %>
-  </p><p>
-  Условие<br>
-  <%= f.rich_text_area(:body, { :class => 'form-control' }) %>
-</p>
+<%= form_for :post,url:posts_path do|f|%>
+  <%if @post.errors.any? %>
+    <%@post.errors.full_messages.each do|msg| %>
+      <div class="alert alert-danger"><%=msg %></div>
+    <%end %>
+    <%end %>
+<p>Краткое название<br>
+  <%= f.text_field(:title, {:class =>'form-control'}) %>
+</p><p>
+    Условие<br>
+    <%= f.rich_text_area(:body, {:class =>'form-control'} )%>
+  </p>
   <p>
   <p>
     Ответ(число)<br>
-    <%= f.text_area(:answer_num, { :class => 'form-control' }) %>
+    <%= f.text_area(:answer_num, {:class =>'form-control'} )%>
   </p>
-  <%= f.submit({ :class => 'btn btn-success' }) %>
-  </p>
+  <%=f.submit({:class => 'btn btn-success'}) %>
+</p>
 
-<% end %>
+<%end %>
