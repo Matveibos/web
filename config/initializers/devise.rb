@@ -276,8 +276,7 @@ Devise.setup do |config|
   # 414152214236-ou0108quo0q28pekq849mab8844ff8cl.apps.googleusercontent.com
   # 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
   # config.omniauth :google_oauth2, '414152214236-ou0108quo0q28pekq849mab8844ff8cl.apps.googleusercontent.com', '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', {}
-  config.omniauth :google_oauth2, Rails.application.credentials[:production][:google_app_id],
-                  Rails.application.credentials[:production][:google_app_secret],{}
+  config.omniauth :google_oauth2,( Rails.application.credentials[:production][:google_app_id]).to_s,( Rails.application.credentials[:production][:google_app_secret]).to_s,{}
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
