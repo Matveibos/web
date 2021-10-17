@@ -275,9 +275,9 @@ Devise.setup do |config|
   # config.omniauth :facebook,'1249596632149197','84e511fd1fb3ed4ee6fef58d05ebd45e',{scope: :email}
   # 414152214236-ou0108quo0q28pekq849mab8844ff8cl.apps.googleusercontent.com
   # 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
-  config.omniauth :google_oauth2, '414152214236-ou0108quo0q28pekq849mab8844ff8cl.apps.googleusercontent.com', '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', {}
-  # config.omniauth :google_oauth2, Rails.application.credentials.development[:google_app_id],
-                  # Rails.application.credentials.development[:google_app_secret],{}
+  # config.omniauth :google_oauth2, '414152214236-ou0108quo0q28pekq849mab8844ff8cl.apps.googleusercontent.com', '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', {}
+  config.omniauth :google_oauth2, Rails.application.credentials.production[:google_app_id],
+                  Rails.application.credentials.production[:google_app_secret],{}
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
