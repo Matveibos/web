@@ -62,6 +62,12 @@ class PostsController < ApplicationController
     # end
   end
 
+  def check
+    @post = Post.find(params[:id])
+    redirect_to home_path
+  end
+
+
   def privacy_policy
   end
 

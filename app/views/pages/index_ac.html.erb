@@ -1,17 +1,19 @@
 <h1><span style="color:mediumvioletred;font-weight:bold">Ваш email: </span><%=current_user.email%> <span class="btn btn-outline-primary" ><%=link_to "Добавить задачу", new_post_path%></span></h1>
 
 
-<h2><span style="color:darkgreen;font-weight:bold">Все ваши задачи:</span></h2>
+<%create_count=0 %>
+
+<h2><span style="color:darkgreen;font-weight:bold">Все ваши задачи:</span>
 <%@page.each do |f| %>
   <% if f.user.email == current_user.email %>
   <div class = "alert alert-light">
     <h2><span style="color:blue;font-weight:bold"> <%=f.title %></span></h2>
     <h3>Условие:<%=f.body %></h3>
     <%= link_to "Подробнее",post_path(f),:class =>'btn btn-info' %>
+    <% create_count+=1%>
   </div>
 
-
-
-
 <% end %>
 <% end %>
+
+  <span style="color:midnightblue;font-weight:bold">Всего создано задач: <%=create_count %></span></h2>

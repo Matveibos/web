@@ -5,4 +5,5 @@ class PagesController < ApplicationController
     @page = Post.all
     @user = User.all
   end
+
   end
