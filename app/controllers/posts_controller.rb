@@ -21,7 +21,7 @@ class PostsController < ApplicationController
       @post.destroy
       redirect_to posts_path
     else
-      redirect_to home_path, notice: 'You are not authorized'
+      redirect_to home_path, notice: 'You are not author'
     end
   end
 
@@ -30,7 +30,7 @@ class PostsController < ApplicationController
     if user_signed_in? && @post.user.id == current_user.id
 
     else
-      redirect_to home_path, notice: 'You are not authorized'
+      redirect_to home_path, notice: 'You are not author'
     end
   end
 
@@ -44,7 +44,7 @@ class PostsController < ApplicationController
         render 'edit'
       end
     else
-      redirect_to home_path, notice: 'You are not authorized'
+      redirect_to home_path, notice: 'You are not author'
     end
   end
 

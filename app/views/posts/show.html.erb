@@ -21,7 +21,6 @@
 <h2>Добавлениe комментария</h2>
 
 <%= form_for([@post, @post.comments.build]) do|f|%>
-
   <p>Пользователь : <br>
     <%= f.text_field(:username , {:class =>'form-control'}) %>
   </p>
@@ -33,5 +32,4 @@
     <%=f.submit("Добавить комментарий",{:class => 'btn btn-warning'}) %>
   </p>
   <%#= link_to "Лайк",post_path(f),:class =>'btn btn-info' %>
-
 <%end %>
