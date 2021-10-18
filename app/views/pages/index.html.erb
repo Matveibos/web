@@ -1,0 +1,16 @@
+<h3><span style="color:mediumvioletred;font-weight:bold">Ваш email:  </span><%=current_user.email %>
+  <span class="btn btn-outline-primary" ><%=link_to "Добавить задачу", new_post_path%></span></h3>
+
+<h1><span style="color:mediumvioletred;font-weight:bold">Ваши задачи</span></h1>
+
+
+<%@post.each do |f| %>
+  <%if f.user.email == current_user.email %>
+  <div class = "alert alert-light">
+    <h2><span style="color:blue;font-weight:bold"><%=f.title %></span></h2>
+    <h3><%=f.body %></h3>
+    <%# if user_signed_in? && f.user.id == current_user.id%>
+    <%= link_to "Подробнее",post_path(f),:class =>'btn btn-info' %>
+  </div>
+<% end %>
+<%end %>
