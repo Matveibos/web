@@ -1,2 +1,8 @@
-<h4><%=@heading%></h4>
-<p><%= @text %></p>
+<h1><span style="color:mediumvioletred;font-weight:bold">Все задачи</span></h1>
+<%@post.each do |f| %>
+  <div class = "alert alert-light">
+    <h2><span style="color:blue;font-weight:bold"><%=f.title %></span></h2>
+    <h3><%=f.body %></h3>
+    <%= link_to "Подробнее",post_path(f),:class =>'btn btn-info' %> <h3><%=f.user.email %></h3>
+  </div>
+<% end %>
