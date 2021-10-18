@@ -5,9 +5,13 @@
 <%@page.each do |f| %>
   <% if f.user.email == current_user.email %>
   <div class = "alert alert-light">
-    <h2><span style="color:blue;font-weight:bold"><%=f.title %></span></h2>
-    <h3><%=f.body %></h3>
+    <h2><span style="color:blue;font-weight:bold"> <%=f.title %></span></h2>
+    <h3>Условие:<%=f.body %></h3>
     <%= link_to "Подробнее",post_path(f),:class =>'btn btn-info' %>
   </div>
+
+
+
+
 <% end %>
 <% end %>
