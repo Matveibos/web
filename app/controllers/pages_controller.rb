@@ -77,9 +77,10 @@ class PagesController < ApplicationController
       params.require(:post).permit(:title, :body, :answer_num)
     end
 
-  end
+
 
   def about
     @heading ='Аккаунт'
     @text = 'немного текста'
   end
+end
