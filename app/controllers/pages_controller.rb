@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  def about
+  def index_ac
     @heading ='Страничка про нас'
     @text = 'немного текста'
   end
