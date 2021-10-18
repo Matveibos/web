@@ -2,7 +2,7 @@
 
 
 <h2><span style="color:darkgreen;font-weight:bold">Все ваши задачи:</span></h2>
-<%@post.each do |f| %>
+<%@page.each do |f| %>
   <% if f.user.email == current_user.email %>
   <div class = "alert alert-light">
     <h2><span style="color:blue;font-weight:bold"><%=f.title %></span></h2>

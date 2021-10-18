@@ -32,13 +32,12 @@
 
       <% if user_signed_in? %>
 
-      <%=link_to "Про нас",about_path,:class =>'btn btn-warning' %>
+      <%=link_to "Аккаунт",about_path,:class =>'btn btn-success' %>
 
       <%= link_to 'Выход',destroy_user_session_path,method: :delete,:class=>'btn btn-danger'  %>
 
       <%= link_to 'Редактирование',edit_user_registration_path,:class =>'btn btn-warning'  %>
 
-    <span class="btn btn-outline-primary" ><%=link_to "Добавить задачу", new_post_path%></span>
 
       <%else %>
 
