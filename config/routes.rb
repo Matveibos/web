@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   #
   root 'posts#index', as: 'home'
 
-  get 'about'=> 'pages#about'
+  get 'about'=> 'pages#about',as:'about'
   get 'privacy_policy'=> 'posts#privacy_policy'
   resources  :posts do
     resources :comments
